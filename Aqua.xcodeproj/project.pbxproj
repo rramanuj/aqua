@@ -15,6 +15,10 @@
 		626A62A620C7598400B92DE9 /* AquaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A62A520C7598400B92DE9 /* AquaTests.swift */; };
 		626A62B120C7598400B92DE9 /* AquaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A62B020C7598400B92DE9 /* AquaUITests.swift */; };
 		626A62BF20C7637E00B92DE9 /* WaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A62BE20C7637E00B92DE9 /* WaterViewController.swift */; };
+		626A62C120C99A7C00B92DE9 /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A62C020C99A7C00B92DE9 /* Water.swift */; };
+		626A62C320C9CB7300B92DE9 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 626A62C220C9CB7300B92DE9 /* 1.png */; };
+		626A62C520C9E31900B92DE9 /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626A62C420C9E31900B92DE9 /* myCell.swift */; };
+		626A62C720C9EAC800B92DE9 /* glass.png in Resources */ = {isa = PBXBuildFile; fileRef = 626A62C620C9EAC700B92DE9 /* glass.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		626A62B020C7598400B92DE9 /* AquaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquaUITests.swift; sourceTree = "<group>"; };
 		626A62B220C7598400B92DE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		626A62BE20C7637E00B92DE9 /* WaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterViewController.swift; sourceTree = "<group>"; };
+		626A62C020C99A7C00B92DE9 /* Water.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
+		626A62C220C9CB7300B92DE9 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../Downloads/1.png; sourceTree = "<group>"; };
+		626A62C420C9E31900B92DE9 /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
+		626A62C620C9EAC700B92DE9 /* glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = glass.png; path = ../../../Downloads/glass.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,8 @@
 				626A62A420C7598400B92DE9 /* AquaTests */,
 				626A62AF20C7598400B92DE9 /* AquaUITests */,
 				626A628E20C7598200B92DE9 /* Products */,
+				626A62C220C9CB7300B92DE9 /* 1.png */,
+				626A62C620C9EAC700B92DE9 /* glass.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +112,12 @@
 				626A629020C7598200B92DE9 /* AppDelegate.swift */,
 				626A629220C7598200B92DE9 /* ViewController.swift */,
 				626A629420C7598200B92DE9 /* Main.storyboard */,
+				626A62C420C9E31900B92DE9 /* myCell.swift */,
 				626A629720C7598400B92DE9 /* Assets.xcassets */,
 				626A629920C7598400B92DE9 /* LaunchScreen.storyboard */,
 				626A629C20C7598400B92DE9 /* Info.plist */,
 				626A62BE20C7637E00B92DE9 /* WaterViewController.swift */,
+				626A62C020C99A7C00B92DE9 /* Water.swift */,
 			);
 			path = Aqua;
 			sourceTree = "<group>";
@@ -234,7 +246,9 @@
 			files = (
 				626A629B20C7598400B92DE9 /* LaunchScreen.storyboard in Resources */,
 				626A629820C7598400B92DE9 /* Assets.xcassets in Resources */,
+				626A62C720C9EAC800B92DE9 /* glass.png in Resources */,
 				626A629620C7598200B92DE9 /* Main.storyboard in Resources */,
+				626A62C320C9CB7300B92DE9 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				626A629320C7598200B92DE9 /* ViewController.swift in Sources */,
+				626A62C120C99A7C00B92DE9 /* Water.swift in Sources */,
+				626A62C520C9E31900B92DE9 /* myCell.swift in Sources */,
 				626A629120C7598200B92DE9 /* AppDelegate.swift in Sources */,
 				626A62BF20C7637E00B92DE9 /* WaterViewController.swift in Sources */,
 			);
