@@ -8,7 +8,13 @@
 
 import Foundation
 
-class Glass {
+
+struct GlobalVar {
+    static var dailyDrink = 1800.00
+}
+
+
+    class Glass {
     var name: String
     var ml: Double
     var drank: Bool

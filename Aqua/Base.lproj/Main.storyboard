@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,13 +91,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Left to Drink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BO-Zh-8WM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left to Drink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BO-Zh-8WM">
                                 <rect key="frame" x="0.0" y="38" width="118" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="3N6-KD-aCB"/>
+                                    <constraint firstAttribute="width" constant="118" id="EhP-Jq-iif"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8zC-xU-PZS">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8zC-xU-PZS">
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xc6-YQ-gna">
@@ -119,10 +124,10 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="h7q-NJ-yMy" secondAttribute="bottom" id="3lT-GW-yYC"/>
-                                            <constraint firstItem="h7q-NJ-yMy" firstAttribute="leading" secondItem="YL3-Mf-T16" secondAttribute="leading" id="Yng-6x-sNK"/>
-                                            <constraint firstAttribute="trailing" secondItem="h7q-NJ-yMy" secondAttribute="trailing" id="cdX-lC-28N"/>
-                                            <constraint firstItem="h7q-NJ-yMy" firstAttribute="top" secondItem="YL3-Mf-T16" secondAttribute="top" id="itg-S3-Hfx"/>
+                                            <constraint firstAttribute="bottom" secondItem="h7q-NJ-yMy" secondAttribute="bottom" id="46w-AY-dQX"/>
+                                            <constraint firstAttribute="trailing" secondItem="h7q-NJ-yMy" secondAttribute="trailing" id="Dql-Vj-05Z"/>
+                                            <constraint firstItem="h7q-NJ-yMy" firstAttribute="top" secondItem="YL3-Mf-T16" secondAttribute="top" id="E7Z-38-lrl"/>
+                                            <constraint firstItem="h7q-NJ-yMy" firstAttribute="leading" secondItem="YL3-Mf-T16" secondAttribute="leading" id="hsH-Y7-RMx"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="myImageView" destination="h7q-NJ-yMy" id="Bfr-Pr-sOn"/>
@@ -134,8 +139,24 @@
                                     <outlet property="delegate" destination="n3C-9p-zlc" id="D5X-DB-mx9"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drank Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4m-IV-DGF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drank Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4m-IV-DGF">
                                 <rect key="frame" x="275" y="38" width="100" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="L7a-dA-Vtw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dz7-dq-rAB">
+                                <rect key="frame" x="21" y="86" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmr-jP-PFz">
+                                <rect key="frame" x="304" y="85" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -144,14 +165,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8zC-xU-PZS" firstAttribute="bottom" secondItem="OpY-bx-yl1" secondAttribute="bottom" id="KYM-7G-87m"/>
-                            <constraint firstItem="8zC-xU-PZS" firstAttribute="trailing" secondItem="OpY-bx-yl1" secondAttribute="trailing" id="l0U-wP-2fP"/>
-                            <constraint firstItem="8zC-xU-PZS" firstAttribute="top" secondItem="7BO-Zh-8WM" secondAttribute="bottom" constant="73" id="pKi-Tx-Tt4"/>
-                            <constraint firstItem="8zC-xU-PZS" firstAttribute="leading" secondItem="OpY-bx-yl1" secondAttribute="leading" id="rmZ-jm-dIt"/>
+                            <constraint firstItem="7BO-Zh-8WM" firstAttribute="leading" secondItem="8zC-xU-PZS" secondAttribute="leading" id="1qj-f2-jzR"/>
+                            <constraint firstItem="7BO-Zh-8WM" firstAttribute="firstBaseline" secondItem="N4m-IV-DGF" secondAttribute="firstBaseline" id="8Fl-iJ-SV0"/>
+                            <constraint firstAttribute="trailing" secondItem="N4m-IV-DGF" secondAttribute="trailing" id="GQk-Ql-c2j"/>
+                            <constraint firstItem="8zC-xU-PZS" firstAttribute="top" secondItem="7BO-Zh-8WM" secondAttribute="bottom" constant="73" id="UFX-XU-2Gz"/>
+                            <constraint firstItem="N4m-IV-DGF" firstAttribute="trailing" secondItem="8zC-xU-PZS" secondAttribute="trailing" id="cNO-rz-fwO"/>
+                            <constraint firstItem="7BO-Zh-8WM" firstAttribute="top" secondItem="OpY-bx-yl1" secondAttribute="top" constant="18" id="jED-p4-N0h"/>
+                            <constraint firstItem="7BO-Zh-8WM" firstAttribute="leading" secondItem="OV7-I5-6yf" secondAttribute="leading" id="kdc-gZ-BGv"/>
+                            <constraint firstItem="8zC-xU-PZS" firstAttribute="bottom" secondItem="OpY-bx-yl1" secondAttribute="bottom" id="rxe-Aa-w5i"/>
+                            <constraint firstItem="7BO-Zh-8WM" firstAttribute="baseline" secondItem="N4m-IV-DGF" secondAttribute="baseline" id="yPb-V6-sAj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OpY-bx-yl1"/>
                     </view>
                     <connections>
+                        <outlet property="lblDrankToday" destination="Pmr-jP-PFz" id="b1z-NB-nW5"/>
+                        <outlet property="lblToDrink" destination="dz7-dq-rAB" id="J5L-Ed-zlN"/>
                         <outlet property="myCollectionView" destination="8zC-xU-PZS" id="kdm-sy-4IJ"/>
                     </connections>
                 </viewController>

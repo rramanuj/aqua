@@ -10,18 +10,38 @@ import UIKit
 
 class WaterViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var myCollectionView: UICollectionView!
+    //Check clean code for these (lbl necessary?)
+    @IBOutlet weak var lblToDrink: UILabel!
+    @IBOutlet weak var lblDrankToday: UILabel!
     
     
-    let array:[String] = ["1","2","3","4","5","6","7","8",]
     
     //Number of views
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return array.count
+        return Glasses.glassArray.glasses.count
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let glass = Glasses.glassArray.glasses[indexPath.row] //display all the records including completed
+        if (!glass.drank) {
+            glass.drank = true//only edit tasks that have not yet been completed.
+        }
+        GlobalVar.dailyDrink = GlobalVar.dailyDrink - glass.ml
+        lblToDrink.text = String(GlobalVar.dailyDrink)
+
+        myCollectionView.reloadData()
+        
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCell
-        cell.myImageView.image = UIImage(named: "glass.png")
+        let glass = Glasses.glassArray.glasses[indexPath.row] //display all the records including completed
+        
+        
+        if glass.drank {
+            cell.myImageView.image = UIImage(named: "glass.png")
+        }
+        else {
+            cell.myImageView.image = UIImage(named: "1.png")
+        }
         return cell
     }
     
@@ -36,10 +56,10 @@ class WaterViewController: UIViewController, UICollectionViewDelegate, UICollect
     //Didset, send the glass instance over to the global singleton. We can do some pulls here. The global singleton is
     //what we need in order for the claculations.
     
-
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
         let itemSize = UIScreen.main.bounds.width/3 - 3
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(20, 0, 10, 0)
@@ -50,22 +70,34 @@ class WaterViewController: UIViewController, UICollectionViewDelegate, UICollect
         //for loop to create 8 instances of the cup.
         
         // Do any additional setup after loading the view.
-    }
+        for _ in 1...9 {
+            let newGlass = Glass()
+            Glasses.glassArray.glasses.append(newGlass)
+        }
+        lblToDrink.text = String(GlobalVar.dailyDrink)
+        
+        // 1 times 5 is 5
+        // 2 times 5 is 10
+        // 3 times 5 is 15
+        // 4 times 5 is 20
+        // 5 times 5 is 25
 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
