@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         print(ml)
     }
     
+    
+    //
+    
     func calculateWater(age: Double, weight: Double) -> Double {
         //water = weight / 2.2
         // if < 30 * 40, if >30 <=55 * 35

@@ -57,6 +57,21 @@ class WaterViewController: UIViewController, UICollectionViewDelegate, UICollect
     //what we need in order for the claculations.
     
     
+    /*
+     ON LOAD:
+     
+     Every time we drink a glass we just need to send a 'last drank' variable up
+     //The individual states of the glass is irrelevant (though we can certainly store the individual instances)
+     //within CoreData should we need to.
+     
+     With the 'lastDrank' date we check if it was today, if it was we keep the glass states (drank/not drank) the same
+     else we reset all the instances.
+     
+     
+     */
+    
+
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
