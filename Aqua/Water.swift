@@ -10,11 +10,12 @@ import Foundation
 
 
 struct GlobalVar {
+    static var defaultMl1 = 250
     static var dailyDrink = 1800.00
 }
 
 
-    class Glass {
+class Glass {
     var name: String
     var ml: Double
     var drank: Bool
@@ -25,6 +26,8 @@ struct GlobalVar {
         self.drank = false
         self.name = "Glass"
     }
+    
+    
 }
 
 //represents an array of Task instances for global storage.
