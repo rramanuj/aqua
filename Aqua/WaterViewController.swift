@@ -44,20 +44,36 @@ class WaterViewController: UIViewController, UICollectionViewDelegate, UICollect
     func removeGlass(glass: Glass) {
         //display all the records including completed
         glass.drank = false
-        
+        healthKitStore.delete(glass.healthkitObject) { (bool, error) in
+            print("Deleted \(bool), error\(error ?? nil)")
+        }
     }
+    
     //date drank
     
     func createGlassInstance(ml: Double, glass: Glass) {
-        glass.ml = ml
-        glass.drank = true//only edit tasks that have not yet been completed.
-        lblDrankToday.text = String(getDrankToday())
-        lblToDrink.text = String(GlobalVar.dailyDrink - getDrankToday())
-        writeToKit(ml: ml)
+        let today = NSDate()
+        if let type = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater) {
+            let litre = ml / 1000
+            
+            let quantity = HKQuantity(unit: HKUnit.liter(), doubleValue: litre)
+            
+            let sample = HKQuantitySample(type: type, quantity: quantity, start: today as Date, end: today as Date)
+            glass.ml = ml
+            glass.healthkitObject = sample
+            glass.drank = true//only edit tasks that have not yet been completed.
+            lblDrankToday.text = String(getDrankToday())
+            lblToDrink.text = String(GlobalVar.dailyDrink - getDrankToday())
+            healthKitStore.save(sample, withCompletion: {(success, error) in
+                print("Saved \(success), error\(error ?? nil)")
+            })
+        }
+       
+//        writeToKit(ml: ml)
         myCollectionView.reloadData()
         
     }
-    
+
     func getDrankToday() -> Double {
         var drankToday = 0.0
         for glass in Glasses.glassArray.glasses {
@@ -153,15 +169,13 @@ class WaterViewController: UIViewController, UICollectionViewDelegate, UICollect
         let quantity = HKQuantity(unit: HKUnit.liter(), doubleValue: litre)
     
         let sample = HKQuantitySample(type: type, quantity: quantity, start: today as Date, end: today as Date)
+            
             healthKitStore.save(sample, withCompletion: {(success, error) in
                 print("Saved \(success), error\(error ?? nil)")
             })
         }
     }
-    
-    func deleteFromKit() {
-        
-    }
+
 
     override func viewDidLoad()
     {
@@ -195,16 +209,4 @@ class WaterViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
